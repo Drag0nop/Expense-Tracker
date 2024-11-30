@@ -62,3 +62,24 @@ Log in with your credentials.
 Add expenses with details such as amount and description.
 View and delete expenses as needed.
 Log out securely when finished.
+
+## Project structure
+
+Expense_Tracker/
+├── static/                  # Static files for styling, images, and interactivity
+│   ├── login.css            # Styles for login page
+│   ├── home.css             # Styles for home page
+│   ├── add.css              # Styles for add expense page
+│   ├── delete.css           # Styles for delete expense page
+│   ├── expense.css          # Styles for viewing expenses
+│   ├── expense.webp         # Image asset
+│   ├── image_hd.webp        # Image asset
+│   └── script.js            # JavaScript file for client-side interactivity
+├── templates/               # HTML templates for rendering pages
+│   ├── login.html           # Login page
+│   ├── home.html            # Home/dashboard page
+│   ├── add.html             # Add expense page
+│   ├── delete.html          # Delete expense page
+│   └── expense.html         # View expenses page
+├── expense_tracker.py       # Main Flask application file
+└── README.md                # Project documentation
