@@ -1,0 +1,240 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main Box Styling */
+.main_box {
+    position: relative;
+    background: linear-gradient(-135deg, #327b7b, #7e85a5);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    padding: 20px 0; /* Add padding to the top and bottom */
+}
+
+/* Sidebar Menu */
+.main_box .sidebar_menu {
+    position: fixed;
+    height: 100vh;
+    width: 280px;
+    left: -280px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo a {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+
+.sidebar_menu .menu li {
+    margin-top: 6px;
+    padding: 14px 20px;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu li:hover {
+    border-left: 1px solid #fff;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Sidebar Toggle Buttons */
+#check {
+    display: none;
+}
+
+.main_box .btn_one i {
+    position: absolute;
+    left: 15px;
+    top: 35px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2000;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .btn_two i {
+    font-size: 25px;
+    position: absolute;
+    left: 240px;
+    top: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.btn_one i:hover {
+    font-size: 29px;
+}
+
+#check:checked ~ .sidebar_menu {
+    left: 0px;
+}
+
+#check:checked ~ .btn_one i {
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i {
+    opacity: 1;
+}
+
+/* Expense Table */
+.main_box table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.main_box table th,
+.main_box table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left
+}
+
+.main_box table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main_box table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.main_box table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Content Section (Form) */
+.main_box .content {
+    width: 80%;
+    max-width: 500px;
+    /* background: #fff; */
+    margin-top: 20px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+}
+
+.main_box .content .title {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(-135deg, #364473, #7e85a5);
+    padding: 15px 0;
+    /* border-radius: 0px 0px 5px 5px; */
+}
+
+.main_box .content form .field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.main_box .content form .field input {
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    font-size: 17px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid lightgray;
+}
+
+.main_box .content form .field label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 17px;
+    color: #999;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.main_box .content form .field input:focus ~ label,
+.main_box .content form .field input:valid ~ label {
+    top: 0;
+    color: #000;
+    font-size: 16px;
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+.main_box .content form .field input[type="submit"] {
+    color: #fff;
+    background: linear-gradient(-135deg, #364473, #7e85a5);
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
+
+.main_box .content form .field input[type="submit"]:hover {
+    background: linear-gradient(-135deg, #28385e, #6d78a5);
+}
+
+.main_box .content form .field input[type="submit"]:active {
+    transform: scale(0.95);
+}
+/* for "your expense" */
+.main_box .content .field label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+}
+/* ==================filter==================== */
+.filter-box {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-box select, .filter-box input {
+    padding: 5px;
+    font-size: 1rem;
+}

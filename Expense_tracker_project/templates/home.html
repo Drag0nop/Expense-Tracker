@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Home</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <script src="https://kit.fontawesome.com/eab5d886b5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main_box">
+        <input type="checkbox" id="check">
+        <!-- Button to Open Sidebar -->
+        <div class="btn_one">
+            <label for="check">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+        <!-- Sidebar Menu -->
+        <div class="sidebar_menu">
+            <div class="logo">
+                <a href="#">ExpenseTracker</a>
+            </div>
+            <div class="btn_two">
+                <label for="check">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('add_expense') }}">Add Expense</a></li>
+                    <li><a href="{{ url_for('expenses') }}">View Expenses</a></li>
+                    <li><a href="{{ url_for('delete_expense') }}">Delete Expense</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main">
+            <div class="page1">
+                <h1>Welcome to Expense Tracker</h1>
+            </div>
+            <div class="page2">
+                <div class="benefit">
+                    <div class="benefits">
+                        <h3>Benefits of Expense tracker</h3>
+                        <ul>
+                            <li>Helps you stay on top of your spending habits.</li>
+                            <li>Provides a clear overview of your finances.</li>
+                            <li>Enables you to set and achieve financial goals.</li>
+                            <li>Helps identify unnecessary expenditures.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card" id="card1">
+                        <div class="overlay">
+                            <h2>Use</h2>
+                            <p>An expense tracker is a simple tool to monitor your daily, weekly, or monthly expenses.</p>
+                        </div>
+                    </div>
+                    <div class="card" id="card2">
+                        <div class="overlay">
+                            <h2>Use</h2>
+                            <p>By recording every transaction, you can identify where your money is going, 
+                                avoid overspending, and plan for future expenses effectively..
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

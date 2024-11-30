@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@300;400;500;600&display=swap');
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main Box */
+.main_box {
+    position: relative;
+    background: url(/static/image_hd.webp) no-repeat center center;
+    background-color: #596a85;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Sidebar Menu */
+.sidebar_menu {
+    position: fixed; /* Stays fixed while scrolling */
+    top: 0;          /* Align to the top */
+    left: -280px;    /* Initially hidden */
+    height: 100vh;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    z-index: 1000; /* Ensures it stays above other elements */
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo a {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+
+.sidebar_menu .menu li {
+    margin-top: 6px;
+    padding: 14px 20px;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu li:hover {
+    border-left: 1px solid #fff;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Sidebar Buttons */
+.main_box .btn_one i {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    position: fixed; /* Fixed for consistent position */
+    top: 16px;
+    left: 16px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .btn_two i {
+    font-size: 25px;
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .sidebar_menu {
+    left: 0; /* Sidebar slides in */
+}
+
+#check:checked ~ .btn_one i {
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i {
+    opacity: 1;
+}
+
+/* Main Content */
+.main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
+.page1 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+.page1 h1 {
+    font-size: 100px;
+    font-weight: 900;
+}
+.page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+.benefit{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    padding: 0 50px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.benefits {
+    width: 40%;
+    text-align: center;
+}
+.benefits h3{
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+.benefits p{
+    font-size: 20px;
+    line-height: 26px;
+}
+.card-container{
+    /*background-color: red;*/
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    height: 80%;
+    width: 24%;
+    /*background-color: blue;*/
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+#card1{
+    background-image: url(/static/expense.webp);
+}
+#card2{
+    background-image: url(/static/expense.webp);
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    padding: 30px;
+    padding-top: 50px;
+    transition: all ease 0.6s;
+    opacity: 0;
+}
+.overlay h4{
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.overlay p{
+    color: #000;
+    font-size: 14px;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(1,1,0,20deg);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Add</title>
+    <link rel="stylesheet" href="/static/add_expense.css">
+    <script src="https://kit.fontawesome.com/eab5d886b5.js" crossorigin="anonymous"></script>
+</head>
+<body>  
+    <div class="main_box">
+        <input type="checkbox" id="check">
+        <!-- sidebar menu button -->
+        <div class="btn_one">
+            <label for="check">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+        <div class="sidebar_menu">
+            <div class="logo">
+                <a href="#">expensetracker</a>
+            </div>
+            <div class="btn_two">
+                <label for="check">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{url_for('add_expense') }}">Add Expense</a></li>
+                    <li><a href="{{ url_for('expenses') }}">View Expenses</a></li>
+                    <li><a href="{{ url_for('delete_expense') }}">Delete Expense</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- add expense -->
+        <div class="content">
+            <div class="title">Add Expense</div>
+            <form method="POST" action="{{ url_for('add_expense') }}">
+                <!-- <h2>Add Expense</h2> -->
+                <div class="field">
+                    <input type="date" name="date" required>
+                </div>
+                <div class="field">
+                    <input type="text" name="description" required>
+                    <label>Description</label>
+                </div>
+                <div class="field">
+                    <input type="number" name="quantity" required>
+                    <label>Quantity</label>
+                </div>
+                <div class="field">
+                    <input type="number" name="price" required>
+                    <label>Price</label>
+                </div>
+                <div class="field">
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
